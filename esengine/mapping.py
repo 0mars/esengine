@@ -6,7 +6,7 @@ class Mapping(object):
     Used to generate mapping based in document field definitions
 
     >>> class Obj(Document):
-    ...     name = StringField()
+    ...     name = KeywordField()
 
     And you can use a Mapping to refresh mappings
     (use in cron jobs or call periodically)

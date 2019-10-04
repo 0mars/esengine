@@ -8,7 +8,7 @@ from esengine.exceptions import ValidationError, FieldTypeMismatch
 from esengine.utils.validation import FieldValidator
 
 __all__ = [
-    'IntegerField', 'LongField', 'StringField', 'FloatField',
+    'IntegerField', 'LongField', 'KeywordField', 'FloatField',
     'DateField', 'BooleanField', 'GeoPointField', 'ArrayField', 'ObjectField'
 ]
 
