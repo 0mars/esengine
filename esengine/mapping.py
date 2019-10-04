@@ -32,7 +32,6 @@ class Mapping(object):
         """
         m = {
             doc_class._doctype: {
-                "_all": {"enabled": self.enable_all},
                 "properties": {
                     field_name: field_instance.mapping
                     for field_name, field_instance in doc_class._fields.items()
