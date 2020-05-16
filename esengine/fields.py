@@ -23,7 +23,7 @@ class LongField(BaseField):
     _default_mapping = {'type': 'long'}
 
 
-class Uuid(BaseField):
+class UuidField(BaseField):
     _type = unicode
     _default_mapping = {"store": "true", 'type': 'string'}
 
