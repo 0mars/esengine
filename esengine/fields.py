@@ -23,9 +23,15 @@ class LongField(BaseField):
     _default_mapping = {'type': 'long'}
 
 
+class Uuid(BaseField):
+    _type = unicode
+    _default_mapping = {"store": "true", 'type': 'string'}
+
+
 class KeywordField(BaseField):
     _type = unicode
     _default_mapping = {"index": "true", "store": "true", 'type': 'keyword'}
+
 
 class FloatField(BaseField):
     _type = float
@@ -226,6 +232,7 @@ class GeoPointField(BaseField):
                     raise FieldTypeMismatch(self._field_name,
                                             self._type,
                                             val.__class__)
+
             if value is not None:
                 if any([isinstance(item, list) for item in value]):
                     [validate(item) for item in value]
