@@ -9,7 +9,7 @@ from esengine.utils.validation import FieldValidator
 
 __all__ = [
     'IntegerField', 'LongField', 'KeywordField', 'FloatField',
-    'DateField', 'BooleanField', 'GeoPointField', 'ArrayField', 'ObjectField'
+    'DateField', 'UuidField', 'BooleanField', 'GeoPointField', 'ArrayField', 'ObjectField'
 ]
 
 
