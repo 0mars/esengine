@@ -25,7 +25,7 @@ class LongField(BaseField):
 
 class UuidField(BaseField):
     _type = unicode
-    _default_mapping = {"store": "true", 'type': 'string'}
+    _default_mapping = {"store": "true", 'type': 'keyword'}
 
 
 class KeywordField(BaseField):
