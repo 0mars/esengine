@@ -61,7 +61,8 @@ class Mapping(object):
             return es.indices.put_mapping(
                 doc_type=self.document_class._doctype,
                 index=self.document_class._index,
-                body=self.generate()
+                body=self.generate(),
+                include_type_name=True
             )
 
     def build_configuration(self, models_to_mapping, custom_settings, es=None):
