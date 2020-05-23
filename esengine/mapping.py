@@ -55,7 +55,8 @@ class Mapping(object):
         if not es.indices.exists(index=self.document_class._index):
             return es.indices.create(
                 index=self.document_class._index,
-                body={"mappings": self.generate()}
+                body={"mappings": self.generate()},
+                params={"include_type_name": True}
             )
         else:
             return es.indices.put_mapping(
