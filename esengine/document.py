@@ -523,7 +523,7 @@ class Document(with_metaclass(ModelMetaclass, BaseDocument)):
         If exists mapping is updated
         :return: acknowlege
         """
-        mapping = Mapping(cls, params={"include_type_name": False}, *args, **kwargs)
+        mapping = Mapping(cls, *args, **kwargs)
         return mapping.save()
 
     @classmethod
