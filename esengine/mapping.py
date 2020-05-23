@@ -37,6 +37,11 @@ class Mapping(object):
                     for field_name, field_instance in doc_class._fields.items()
                     if field_name != "id"
                 }
+            },
+            "client": {
+                "custom": {
+                    "include_type_name": False
+                }
             }
         }
         return m
