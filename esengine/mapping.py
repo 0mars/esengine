@@ -1,4 +1,5 @@
 import collections
+import logging
 
 
 class Mapping(object):
@@ -39,6 +40,7 @@ class Mapping(object):
                 }
             }
         }
+        logging.getLogger(__name__).info(m)
         return m
 
     def generate(self):
