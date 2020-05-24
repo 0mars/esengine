@@ -22,8 +22,8 @@ class Pagination(object):
         page = int(page or 1)
         per_page = int(per_page or 10)
         logging.getLogger(__name__).info(page)
-        if page < 1:
-            raise PaginationError("Page is lower than 1")
+        # if page < 1:
+        #     raise PaginationError("Page is lower than 1")
 
         self.iterable = iterable  # noqa
         self.page = page  # noqa
