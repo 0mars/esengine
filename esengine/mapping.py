@@ -60,13 +60,6 @@ class Mapping(object):
                 body={"mappings": self.generate()},
                 params={"include_type_name": "true"}
             )
-        else:
-            return es.indices.put_mapping(
-                doc_type=self.document_class._doctype,
-                index=self.document_class._index,
-                body=self.generate(),
-                params={"include_type_name": "true"}
-            )
 
     def build_configuration(self, models_to_mapping, custom_settings, es=None):
         """
