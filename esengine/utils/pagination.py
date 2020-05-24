@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import logging
 import math
 from copy import deepcopy
 from six.moves import range
@@ -20,6 +21,7 @@ class Pagination(object):
     def init(self, iterable, page, per_page):
         page = int(page or 1)
         per_page = int(per_page or 10)
+        logging.getLogger(__name__).info(page)
         if page < 1:
             raise PaginationError("Page is lower than 1")
 
