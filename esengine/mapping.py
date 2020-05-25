@@ -1,4 +1,5 @@
 import collections
+import logging
 
 
 class Mapping(object):
@@ -6,7 +7,7 @@ class Mapping(object):
     Used to generate mapping based in document field definitions
 
     >>> class Obj(Document):
-    ...     name = StringField()
+    ...     name = KeywordField()
 
     And you can use a Mapping to refresh mappings
     (use in cron jobs or call periodically)
@@ -39,6 +40,7 @@ class Mapping(object):
                 }
             }
         }
+        logging.getLogger(__name__).info(m)
         return m
 
     def generate(self):
@@ -55,13 +57,8 @@ class Mapping(object):
         if not es.indices.exists(index=self.document_class._index):
             return es.indices.create(
                 index=self.document_class._index,
-                body={"mappings": self.generate()}
-            )
-        else:
-            return es.indices.put_mapping(
-                doc_type=self.document_class._doctype,
-                index=self.document_class._index,
-                body=self.generate()
+                body={"mappings": self.generate()},
+                params={"include_type_name": "true"}
             )
 
     def build_configuration(self, models_to_mapping, custom_settings, es=None):
